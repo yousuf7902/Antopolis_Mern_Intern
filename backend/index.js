@@ -15,9 +15,10 @@ app.post("/addCategory", (req, res)=>{
     category.create(req.body).then(animals => res.json(animals)).catch(err => res.json(err));
 })
 
-app.get("/allCategory", (req, res) => {
-    category.find({}).then(animals => res.json(animals).catch(err => res.json(err)))
-})
+app.get("/allCategory", async (req, res) => {
+    const categories = await category.find({}); // Fetch all categories from the database
+    res.status(200).json(categories); 
+});
 
 app.listen(8080, () => {
     console.log("Server is running on PORT 8080....");

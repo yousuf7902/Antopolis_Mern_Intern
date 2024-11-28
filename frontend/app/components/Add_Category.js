@@ -21,9 +21,12 @@ const Add_Category = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ category }),
-        });
-        setCategory("");
-        setShowModal(false);
+        }).then(category => {
+            setCategory("");
+            setShowModal(false);
+            window.location.reload();
+        }).catch(err=> console.log(err));
+        
 
     };
 

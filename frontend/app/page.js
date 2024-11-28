@@ -3,16 +3,19 @@ import React from "react";
 import img1 from "../public/images/elephant.jpg";
 import Add_Animal from "./components/Add_Animal";
 import Add_Category from "./components/Add_Category";
+import getAllCategory from "@/api/getAllCategory";
 
-export default function Home() {
+export default async function  Home() {
+    const category = await getAllCategory();
+
     return (
         <div className="min-h-screen w-[80%] mx-auto mt-20 bg-black text-white">
             <header className="flex justify-between items-center">
                 <div>
                     <ul className="flex gap-4 justify-center items-center">
-                        <li className="border border-white px-4 py-2 rounded-full">Land Animal</li>
-                        <li className="border border-white px-4 py-2 rounded-full">Bird</li>
-                        <li className="border border-white px-4 py-2 rounded-full">Fish</li>
+                        {category.map((c) => (
+                            <li className="border border-white px-4 py-2 rounded-full">{c.category}</li>
+                        ))}
                     </ul>
                 </div>
                 <div className="space-x-4">

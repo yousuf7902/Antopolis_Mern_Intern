@@ -3,13 +3,28 @@ import React, { useState } from "react";
 
 const Add_Category = () => {
     const [showModal, setShowModal] = useState(false);
-    
+    const [category, setCategory] = useState("");
+
     const handleAddCategory = () => {
         setShowModal(true);
     };
 
     const handleCloseModal = () => {
         setShowModal(false);
+    };
+
+    const submitCategory = async (e) => {
+        e.preventDefault();
+        fetch("http://localhost:8080/addCategory", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ category }),
+        });
+        setCategory("");
+        setShowModal(false);
+
     };
 
     return (
@@ -38,9 +53,13 @@ const Add_Category = () => {
                             type="text"
                             placeholder="Category Name"
                             className="border p-2 w-full mb-4 bg-gray-200 text-black"
+                            onChange={(e) => setCategory(e.target.value)}
                         />
                         <div className="flex justify-center items-center space-x-2">
-                            <button className="mt-6 bg-black text-white w-[85%] px-3 py-2 rounded">
+                            <button
+                                className="mt-6 bg-black text-white w-[85%] px-3 py-2 rounded"
+                                onClick={submitCategory}
+                            >
                                 Save
                             </button>
                         </div>

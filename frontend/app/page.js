@@ -5,27 +5,6 @@ import Add_Animal from "./components/Add_Animal";
 import Add_Category from "./components/Add_Category";
 
 export default function Home() {
-    const data = [
-        {
-            id: 1,
-            name: "Elephant",
-            category: "Mammal",
-            image: "https://example.com/images/elephant.jpg",
-        },
-        {
-            id: 2,
-            name: "Horse",
-            category: "Mammal",
-            image: "https://example.com/images/horse.jpg",
-        },
-        {
-            id: 3,
-            name: "Fox",
-            category: "Mammal",
-            image: "https://example.com/images/fox.jpg",
-        },
-    ];
-
     return (
         <div className="min-h-screen w-[80%] mx-auto mt-20 bg-black text-white">
             <header className="flex justify-between items-center">
@@ -37,8 +16,8 @@ export default function Home() {
                     </ul>
                 </div>
                 <div className="space-x-4">
-                    <Add_Animal/>
-                    <Add_Category/>
+                    <Add_Animal />
+                    <Add_Category />
                 </div>
             </header>
             <main>
@@ -115,7 +94,6 @@ export default function Home() {
                             <h1 className="text-white mt-4">Elephant</h1>
                         </div>
                     </div>
-                    
                 </section>
             </main>
         </div>

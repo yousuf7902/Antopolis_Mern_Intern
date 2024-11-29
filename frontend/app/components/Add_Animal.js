@@ -36,12 +36,6 @@ export default function Add_Animal() {
                             placeholder="Animal Name"
                             className="border p-2 w-full mb-4 bg-gray-200 text-black"
                         />
-                        <select className="border p-2 w-full mb-4">
-                            <option>Select Category</option>
-                            <option>Mammal</option>
-                            <option>Bird</option>
-                            <option>Fish</option>
-                        </select>
                         <input type="file" className="w-full mb-4" />
                         <div className="flex justify-center items-center space-x-2">
                             <button className="mt-6 bg-black text-white w-[85%] px-3 py-2 rounded">

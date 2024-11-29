@@ -14,13 +14,15 @@ export default async function  Home() {
                 <div>
                     <ul className="flex gap-4 justify-center items-center">
                         {category.map((c) => (
-                            <li className="border border-white px-4 py-2 rounded-full">{c.category}</li>
+                            <li className="border border-white px-4 py-2 rounded-full">
+                                {c.category}
+                            </li>
                         ))}
                     </ul>
                 </div>
                 <div className="space-x-4">
                     <Add_Animal />
-                    <Add_Category />
+                    <Add_Category  />
                 </div>
             </header>
             <main>

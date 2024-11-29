@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Add_Category = () => {
     const [showModal, setShowModal] = useState(false);
     const [category, setCategory] = useState("");
+
 
     const handleAddCategory = () => {
         setShowModal(true);
